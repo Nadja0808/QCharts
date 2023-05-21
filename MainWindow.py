@@ -1,7 +1,8 @@
 from PySide6.QtWidgets import QMainWindow
 from CentralWidget import CentralWidget
+from Central import Central
 from CentralW import CentralW
-from AktienW import AktienW
+from Aktie import Aktie
 
 
 class MainWindow(QMainWindow):
@@ -10,4 +11,4 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Aktienkurs")
 
-        self.setCentralWidget(CentralW(self))
+        self.setCentralWidget(Central(self))

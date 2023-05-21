@@ -40,6 +40,7 @@ class AktienW(QWidget):
         self.series.clicked.connect(self.wert_einlesen)
 
         self.days = 0
+        #self.grenze = 50
 
     #def set_aktien_range(self, aktie_min, aktie_max):
     #    self.aktien_axis.setRange(aktie_min, aktie_max)
@@ -53,3 +54,7 @@ class AktienW(QWidget):
     def add_aktie(self, aktie):
         self.series.append(QDateTime.currentDateTime().addDays(self.days).toMSecsSinceEpoch(), aktie)
         self.days = self.days + 1
+        if aktie > 50:
+            self.series.setColor(QColor("green"))
+        elif aktie <= 50:
+            self.series.setColor(QColor("red"))
